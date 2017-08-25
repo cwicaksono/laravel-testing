@@ -16,9 +16,11 @@ Route::get('/', function () {
 });
 
 // Pengaturan
+Route::get('/setting', 'DepartemenController@index')->name('setting');
 Route::resource('departemen', 'DepartemenController');
 Route::resource('jabatan', 'JabatanController');
 Route::resource('staff', 'StaffController');
+
 
 // Route::get('/', 'HomeController@index')->name('home');
 // Route::get('/home', 'HomeController@home')->name('home');
@@ -58,3 +60,7 @@ Route::resource('staff', 'StaffController');
 
 // // api
 // // Route::get('api/produk/barcode/', 'Api\ProdukController@getUsingBarcode');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
